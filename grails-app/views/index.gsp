@@ -10,15 +10,21 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Google Phone Gallery</title>	 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<r:require module="angular"/>
-		<r:layoutResources />
+		%{--<r:require module="angular"/>
+
+		<r:layoutResources />--}%
+
+        <asset:javascript src="application.js"/>
+        <asset:stylesheet href="application.css" />
 	</head>
 	
 	<body>
-	  <div class="view-container" ng-app="phonecatApp">
+	  <div class="view-container" ng-app="angugrailsApp">
 	    <div ng-view class="view-frame"></div>
 	  </div>
+%{--
 	  <r:layoutResources />
+--}%
 	</body>
 	
 </html>

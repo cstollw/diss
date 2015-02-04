@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/grails-angular-phonecat.iml" filepath="$PROJECT_DIR$/grails-angular-phonecat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/grails-angular-phonecat-grailsPlugins.iml" filepath="$PROJECT_DIR$/grails-angular-phonecat-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grails-angular-interface.iml" filepath="$PROJECT_DIR$/grails-angular-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grails-angular-interface-grailsPlugins.iml" filepath="$PROJECT_DIR$/grails-angular-interface-grailsPlugins.iml" />
     </modules>
   </component>
 </project>

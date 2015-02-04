@@ -1,21 +1,23 @@
 import grails.converters.JSON
 
-import com.phonecat.Android
-import com.phonecat.Battery
-import com.phonecat.Camera
-import com.phonecat.Connectivity
-import com.phonecat.Display
-import com.phonecat.Hardware
-import com.phonecat.Phone
-import com.phonecat.PhoneDetail
-import com.phonecat.SizeAndWeight
-import com.phonecat.Storage
+import edu.diss.json2grails.*
 
 class BootStrap {
 	
 	def grailsApplication
 
     def init = { servletContext ->
+
+        Phone myphone = new Phone()
+        myphone.phoneId= 123
+        myphone.name= 'ChrixPhone'
+        myphone.age= 11
+        myphone.imageUrl= "http://www.tomato.ph/images/shoponline/lifestyle/myphone/O3PH0014BB_0.jpg"
+        myphone.snippet= "The Next, Next Generation \n\n Experience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        myphone.save(flush:true, failOnError:true)
+
+
+        /*  Von Hier war Bootstrap Original */
 		
 		JSON.registerObjectMarshaller( Phone ) { Phone phone ->
 			return [
@@ -90,10 +92,11 @@ class BootStrap {
 
 			}
 		}
+
     }
 	
     def destroy = {
 		
     }
-	
+
 }

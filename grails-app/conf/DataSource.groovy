@@ -15,10 +15,40 @@ hibernate {
 
 // environment specific settings
 environments {
-    development {
+    /*development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+        }
+    }*/
+    dataSource {
+        pooled = true
+        driverClassName = "org.h2.Driver"
+        username = "sa"
+        password = ""
+    }
+// environment specific settings
+    development {
+        dataSource {
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:mysql://localhost/angugrails?autoReconnect=true"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+            username = "root"
+            password = "root"
+            properties {
+                maxActive = 50
+                maxIdle = 25
+                minIdle = 5
+                initialSize = 5
+                minEvictableIdleTimeMillis = 60000
+                timeBetweenEvictionRunsMillis = 60000
+                maxWait = 10000
+                testOnBorrow=true
+                testWhileIdle=true
+                testOnReturn=true
+                validationQuery="SELECT 1"
+            }
         }
     }
     test {

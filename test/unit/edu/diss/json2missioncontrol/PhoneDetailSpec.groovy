@@ -1,4 +1,4 @@
-package edu.diss.json2grails
+package edu.diss.json2missioncontrol
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Battery)
-class BatterySpec extends Specification {
+@TestFor(PhoneDetail)
+class PhoneDetailSpec extends Specification {
 
     def setup() {
     }

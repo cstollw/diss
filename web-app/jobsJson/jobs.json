@@ -1,0 +1,16 @@
+[
+    {
+        /*"age": "14-2-2011",*/
+        "id": "11",
+        "imageUrl": "http://www.mathworks.com/matlabcentral/fileexchange/screenshots/8669/original.jpg",
+        "name": "Sauvola Binarization",
+        "snippet": "Sauvola binarization method is well suited for ill illuminated or stained documents."
+    }, 
+    {
+        /*"age": "14-1-2011",*/
+        "id": "22",
+        "imageUrl": "http://liris.cnrs.fr/christian.wolf/software/binarize/ss_binarize_annotated.png",
+        "name": "Ni-Black",
+        "snippet": "A traditional local image thresholding."
+    }
+]

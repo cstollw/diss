@@ -1,4 +1,4 @@
-package edu.diss.json2grails
+package edu.diss.json2missioncontrol
 
 class Battery {
 

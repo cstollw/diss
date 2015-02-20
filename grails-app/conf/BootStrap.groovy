@@ -1,6 +1,8 @@
 import grails.converters.JSON
 
-import edu.diss.json2grails.*
+import edu.diss.json2missioncontrol.*
+
+import java.text.SimpleDateFormat
 
 class BootStrap {
 	
@@ -8,28 +10,31 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        Phone myphone = new Phone()
-        myphone.phoneId= 123
-        myphone.name= 'ChrixPhone'
-        myphone.age= 11
-        myphone.imageUrl= "http://www.tomato.ph/images/shoponline/lifestyle/myphone/O3PH0014BB_0.jpg"
-        myphone.snippet= "The Next, Next Generation \n\n Experience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
-        myphone.save(flush:true, failOnError:true)
+        Job my = new Job()
+        my.jobId= 123
+        my.name= 'Adaptive Threshold'
+/*        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String mydate = "01-08-2011";
+        myphone.age= new Date()*/
+        ;/*
+        myphone.age= "14092011"*/
+        my.imageUrl= "http://vgl-ait.org/cvwiki/lib/exe/fetch.php?media=opencv:tutorial:sis.jpg"
+        my.snippet= "The Next, Next Generation \n\n Experience the future with this Binarization, the world's first one powered rainwater."
+        my.save(flush:true, failOnError:true)
 
 
         /*  Von Hier war Bootstrap Original */
 		
-		JSON.registerObjectMarshaller( Phone ) { Phone phone ->
+		JSON.registerObjectMarshaller( Job ) { Job phone ->
 			return [
-					age : phone.age,
-					id : phone.phoneId,
+					id : phone.jobId,
 					imageUrl : phone.imageUrl,
 					name : phone.name,
 					snippet : phone.snippet
 			]
 		}
 		
-		JSON.registerObjectMarshaller( PhoneDetail ) { PhoneDetail phoneDetail ->
+		/*JSON.registerObjectMarshaller( PhoneDetail ) { PhoneDetail phoneDetail ->
 			return [
 				additionalFeatures: phoneDetail.additionalFeatures,
 				android: phoneDetail.android,
@@ -53,22 +58,22 @@ class BootStrap {
 					primary : camera.primaryCamera,
 					features : camera.features,
 			]
-		}
+		}*/
 		
-		File phonesFolder = grailsApplication.mainContext.getResource("/phonesJson").file
+		File phonesFolder = grailsApplication.mainContext.getResource("/jobsJson").file
 		
 		phonesFolder.listFiles().each { File file ->
 			
-			if(file.name.equals("phones.json")){
-				
+			if(file.name.equals("jobs.json")){
+
 				def jsonPhones = grails.converters.JSON.parse(file.text)
 				jsonPhones.each {
-					Phone phone = new Phone(it)
-					phone.phoneId = it.id
+					Job phone = new Job(it)
+					phone.jobId = it.id
 					phone.save(flush:true, failOnError:true)
 				}
 				
-			} else {
+			} /*else {
 
 				def jsonPhoneDetail = grails.converters.JSON.parse(file.text)
 
@@ -90,7 +95,7 @@ class BootStrap {
 
 				phoneDetail.save(flush:true, failOnError:true)
 
-			}
+			}*/
 		}
 
     }

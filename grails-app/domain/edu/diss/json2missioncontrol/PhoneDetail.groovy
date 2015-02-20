@@ -1,4 +1,4 @@
-package edu.diss.json2grails
+package edu.diss.json2missioncontrol
 
 class PhoneDetail {
 
@@ -20,6 +20,10 @@ class PhoneDetail {
 		dimensions : String,
 		images : String
 		]
+
+    static belongsTo = [
+            Job
+    ]
 	
 	static mapping = {
 		additionalFeatures type: "text"

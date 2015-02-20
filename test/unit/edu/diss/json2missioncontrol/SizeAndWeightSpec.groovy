@@ -1,4 +1,4 @@
-package edu.diss.json2grails
+package edu.diss.json2missioncontrol
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
